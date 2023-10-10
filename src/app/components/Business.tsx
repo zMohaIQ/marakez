@@ -52,16 +52,15 @@ const Business = () => {
           </div>
           <div className="box">
             <img
-              src="https://gazef.s3.amazonaws.com/mrakez_micro_services/media/developments/ce07a250-c991-47b8-a281-9ddfd490fe8d.jpg"
+              src="https://gazef.s3.amazonaws.com/mrakez_micro_services/media/developments/b866d594-7395-439a-b37b-781b93d060d1.jpg"
               alt="img 2"
             />
             <div className="content">
-              <p>District 5 Work</p>
-              <h3>Campus</h3>
+              <p>District 5 Residences</p>
+              <h3>Plateau</h3>
               <p>
-                DISTRICT 5 CAMPUS offers an array of area ranges opens a world of opportunities to choose from, with
-                high-efficiency rates and office spaces that start from 160 sqm up to 690 sqm, ready for delivery within
-                a year and a half.
+                The Plateau is our highest vantage point. The redefinition of elevated living. We sketched it to offer
+                endless views bound to take your breath away.
               </p>
             </div>
           </div>
