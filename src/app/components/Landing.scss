@@ -11,9 +11,9 @@
 
   .content {
     position: absolute;
-    bottom: 0; /* Position at the bottom */
-    left: 50%; /* Position in the middle */
-    transform: translateX(-50%); /* Center horizontally */
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
     gap: 1rem;
