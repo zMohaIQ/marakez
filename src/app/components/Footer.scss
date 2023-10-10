@@ -1,0 +1,78 @@
+@import "../globals.scss";
+
+.footer {
+  border-top: 1px solid $Light-Gray;
+  border-bottom: 1px solid $Light-Gray;
+  padding: 3rem 5rem;
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 3rem 1rem;
+  }
+
+  .content {
+    display: flex;
+    gap: 10rem;
+
+    @media screen and (max-width: 600px) {
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    ul {
+      list-style: none;
+
+      .title {
+        color: $Dark-Gray;
+        text-transform: uppercase;
+      }
+
+      li {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .email {
+    @media screen and (max-width: 1024px) {
+      margin-top: 2rem;
+    }
+    h4 {
+      font-size: 0.9rem;
+      color: $Main-Color;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      input {
+        padding: 0 1rem;
+        border: 1px solid $Light-Gray;
+        border-right: transparent;
+        border-top-left-radius: 0.4rem;
+        border-bottom-left-radius: 0.4rem;
+        flex: 1;
+      }
+
+      button {
+        border-radius: unset;
+        border-left: transparent;
+        border-top-right-radius: 0.4rem;
+        border-bottom-right-radius: 0.4rem;
+      }
+    }
+  }
+}

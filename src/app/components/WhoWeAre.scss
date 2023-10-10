@@ -1,0 +1,36 @@
+@import "../globals.scss";
+
+.who {
+  color: $White-Color;
+  .line {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+    h1 {
+      margin-bottom: 2rem;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+
+    .content__holder {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      text-align: center;
+
+      @media screen and (max-width: 669px) {
+        flex-direction: column;
+      }
+
+      .content {
+        h1 {
+          font-weight: bold;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}

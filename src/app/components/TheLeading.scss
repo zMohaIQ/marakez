@@ -1,0 +1,109 @@
+@import "../globals.scss";
+
+.leading {
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+
+  .header {
+    @include bg-strike($Main-Color);
+    color: $Main-Color;
+    margin-bottom: 4rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .box__holder {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 1rem;
+    padding: 0 10rem;
+
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 0 1rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1rem;
+      transition: 0.3s all;
+    }
+
+    .box {
+      position: relative;
+      transition: 0.3s all;
+      &:hover {
+        img {
+          transform: scale(1.02);
+          transition: 0.3s all;
+        }
+      }
+      @media screen and (max-width: 1024px) {
+        grid-column: unset !important;
+        grid-row: unset !important;
+      }
+
+      .content {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        h2 {
+          margin-bottom: .25rem;
+          font-weight: normal;
+          color: $White-Color;
+        }
+        a {
+          text-decoration: underline;
+          color: $White-Color;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .box_1 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 7;
+    }
+
+    .box_2 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 7;
+      grid-row-end: 10;
+    }
+
+    .box_3 {
+      grid-column-start: 3;
+      grid-column-end: 7;
+      grid-row-start: 1;
+      grid-row-end: 10;
+    }
+
+    .box_4 {
+      grid-column-start: 7;
+      grid-column-end: 9;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+
+    .box_5 {
+      grid-column-start: 7;
+      grid-column-end: 9;
+      grid-row-start: 10;
+      grid-row-end: 3;
+    }
+  }
+}

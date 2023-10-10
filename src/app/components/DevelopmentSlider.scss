@@ -1,0 +1,117 @@
+@import "../globals.scss";
+
+.development {
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+
+  .header {
+    @include bg-strike($Main-Color);
+    color: $Main-Color;
+    margin-bottom: 2rem;
+  }
+
+  .slick-slider {
+    .slick-arrow {
+      z-index: 100;
+    }
+
+    .slick-prev {
+      left: 75px;
+
+      @media screen and (max-width: 600px) {
+        left: 50px;
+      }
+    }
+
+    .slick-next {
+      right: 75px;
+    }
+
+    .slick-next,
+    .slick-prev {
+      @media screen and (max-width: 768px) {
+      }
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      font-size: 40px;
+    }
+  }
+
+  .card {
+    text-align: center;
+    border: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+      padding: 1rem;
+      border-radius: 3rem;
+      border: 0;
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    &__content {
+      h3 {
+        color: $Main-Color;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        color: $Dark-Gray;
+      }
+    }
+
+    .imgText {
+      position: absolute;
+      bottom: 10%;
+      left: 0;
+      width: 100%;
+      padding: 2rem;
+      transition: transform 0.3s ease;
+      opacity: 0;
+      text-align: left;
+      transition: 0.3s all;
+
+      p {
+        margin: 0;
+        font-size: 1.2rem;
+        color: $White-Color;
+        margin-bottom: 1rem;
+        font-weight: normal;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: underline;
+        font-weight: bold;
+      }
+    }
+
+    &:hover .cardContent {
+      opacity: 1;
+    }
+
+    &:hover .imgText {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.line {
+  background-image: url(../assests/imgs/section2BG.9d581b69.png);
+  width: 100%;
+  height: 20%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  padding: 3rem;
+}
