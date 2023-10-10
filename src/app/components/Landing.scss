@@ -1,0 +1,30 @@
+@import "../globals.scss";
+
+.landing {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  video {
+    width: 100%;
+  }
+
+  .content {
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    left: 50%; /* Position in the middle */
+    transform: translateX(-50%); /* Center horizontally */
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 2rem;
+    width: 75%;
+    align-items: center;
+    background-color: $White-Color;
+    border-radius: 2rem;
+
+    &__holder {
+      text-align: center;
+    }
+  }
+}

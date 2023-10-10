@@ -1,0 +1,32 @@
+@import "../globals.scss";
+
+.contact {
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  display: flex;
+  justify-content: flex-end;
+  gap: 3rem;
+  padding: 0.6rem 2rem;
+  border: 1px solid $Light-Gray;
+  background-color: white;
+  .about {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 400;
+    color: $Dark-Gray;
+    cursor: pointer;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 0.4rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}

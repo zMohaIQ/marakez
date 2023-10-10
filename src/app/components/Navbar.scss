@@ -1,0 +1,125 @@
+@import "../globals.scss";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 2rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.with-sidebar {
+    background-color: white;
+  }
+
+  .list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem;
+    color: $Main-Color;
+    li {
+      cursor: pointer;
+      &:hover {
+        color: #303881;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      display: none;
+      &.open {
+        display: flex;
+        gap: 4rem;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        margin-left: auto;
+        margin-right: auto;
+        top: 75px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        background-color: $White-Color;
+        z-index: 1000;
+
+        li {
+          position: relative;
+          margin-bottom: 1rem;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            transform: translateX(-50%);
+            width: 80%;
+            margin-top: 0.5rem;
+            height: 1px;
+            background-color: $Main-Color;
+          }
+        }
+
+        li:last-child::after {
+          display: none; /* Hide the line under the last li element */
+        }
+      }
+    }
+  }
+
+  .logo {
+    width: 200px;
+    height: 150px;
+
+    @media screen and (max-width: 768px) {
+      width: 130px;
+      height: 100px;
+      position: fixed;
+      left: 20px;
+      top: 5px;
+    }
+  }
+
+  .sidebar {
+    z-index: 200;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    top: 35px;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    gap: 1rem;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+
+    button {
+      padding: 0.6rem 2rem;
+      background-color: $Main-Color;
+      color: $White-Color;
+      border-radius: 2rem;
+      outline: none;
+      font-weight: bold;
+      border: 1px solid $Main-Color;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #303881;
+      }
+    }
+  }
+}
