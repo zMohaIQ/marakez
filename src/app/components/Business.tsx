@@ -79,7 +79,9 @@ const Business = () => {
             attention to detail for our clients needs. Here are our latest responses to the markets
             demands.
           </p>
-          <Button>View all Properties</Button>
+          <Button>
+            View all <br /> Properties
+          </Button>
         </div>
 
         <div className="imgs">

@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React from "react";
-
+import React, { useEffect } from "react";
 import Slider from "react-slick";
+import { useInView } from "react-intersection-observer";
+import { sliderData } from "../constants/slider.constant";
 import "./DevelopmentSlider.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import { sliderData } from "../constants/slider.constant";
+import "animate.css";
 
 function Arrow(props: { className: any; style: any; onClick: any }) {
   const { className, style, onClick } = props;
@@ -62,9 +62,23 @@ const DevelopmentSlider: React.FC = () => {
     ],
   };
 
+  const [ref, inView] = useInView({
+    triggerOnce: false, // Set to true if you only want the animation to trigger once
+  });
+
+  useEffect(() => {
+    if (inView) {
+      const developmentElement = document.querySelector(".development");
+      developmentElement?.classList.add("animate__animated", "animate__fadeInUp");
+    } else {
+      const developmentElement = document.querySelector(".development");
+      developmentElement?.classList.remove("animate__animated", "animate__fadeInUp");
+    }
+  }, [inView]);
+
   return (
     <>
-      <main className="development">
+      <main className="development" ref={ref}>
         <h2 className="header">
           <span>OUR DEVELOPMENTS</span>
         </h2>
@@ -84,7 +98,7 @@ const DevelopmentSlider: React.FC = () => {
           ))}
         </Slider>
       </main>
-      <div className="line"></div>
+      <div className="line" ref={ref}></div>
     </>
   );
 };

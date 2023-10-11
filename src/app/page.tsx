@@ -1,4 +1,5 @@
 import Business from "./components/Business";
+import CallUs from "./components/CallUs";
 import ContactUs from "./components/ContactUs";
 import CopyRight from "./components/CopyRight";
 import DevelopmentSlider from "./components/DevelopmentSlider";
@@ -11,6 +12,7 @@ import WhoWeAre from "./components/WhoWeAre";
 export default function Home() {
   return (
     <>
+      <CallUs />
       <ContactUs />
       <Navbar />
       <Landing />

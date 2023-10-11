@@ -6,18 +6,23 @@
   z-index: 120;
   display: flex;
   justify-content: flex-end;
-  gap: 3rem;
-  padding: 0.6rem 2rem;
+  gap: 1rem;
+  padding: 0.2rem 2rem;
   border: 1px solid $Light-Gray;
   background-color: white;
   .about {
     display: flex;
-    gap: 1rem;
     align-items: center;
     font-size: 13px;
     font-weight: 400;
     color: $Dark-Gray;
     cursor: pointer;
+    p {
+      border-right: 1px solid $Light-Gray;
+      padding-right: 0.2rem;
+      padding-left: 0.2rem;
+      font-weight: 500;
+    }
   }
   .logo {
     display: flex;

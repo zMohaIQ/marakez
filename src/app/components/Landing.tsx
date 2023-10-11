@@ -117,7 +117,9 @@ export default function Landing() {
           </div>
           <div className="box" onClick={handleBoxPrice}>
             <h1>Price Range</h1>
-            <p>1000000 to 100000000</p>
+            <p>
+              {fromValue} to {toValue}
+            </p>
           </div>
           <div className="box">
             <Button>

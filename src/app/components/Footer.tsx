@@ -18,7 +18,9 @@ const Footer = () => {
       </div>
       <div className="email">
         <h4>NEWSLETTER</h4>
-        <p>Join our mailing list to receive monthly news and updates about our developments.</p>
+        <p>
+          Join our mailing list to receive monthly news and updates about <br /> our developments.
+        </p>
         <form>
           <input type="email" placeholder="Your Email" />
           <Button>SIGN UP</Button>
