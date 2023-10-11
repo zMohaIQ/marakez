@@ -62,7 +62,7 @@
       display: none;
       &.open {
         display: flex;
-        gap: 2rem;
+        gap: 1rem;
         flex-direction: column;
         justify-content: center;
         position: fixed;
@@ -149,9 +149,13 @@
         display: flex;
         z-index: 100;
         position: fixed;
-        top: 10%;
+        top: 15%;
         left: 50%;
         transform: translateX(-50%);
+
+        button {
+          padding: 0.4rem 1rem;
+        }
       }
     }
   }
