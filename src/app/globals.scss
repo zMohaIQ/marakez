@@ -65,6 +65,16 @@ $Raleway: "Raleway", sans-serif;
   padding: 3rem;
 }
 
+.animate__animated.animate__fadeIn {
+  --animate-duration: 2s;
+}
+
+@media screen and (max-width: 768px) {
+  .animate__animated.animate__fadeIn {
+    --animate-duration: 3s;
+  }
+}
+
 // .header {
 //   display: flex;
 //   align-items: center;
