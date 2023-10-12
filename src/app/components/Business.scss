@@ -153,3 +153,7 @@
     margin-top: 4rem;
   }
 }
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 2s;
+}

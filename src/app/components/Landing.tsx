@@ -8,6 +8,9 @@ import Image from "next/image";
 import { searchListData } from "../constants/searchList.constant";
 import { useState } from "react";
 
+import { useInView } from "react-intersection-observer";
+import React, { useEffect } from "react";
+
 export default function Landing() {
   const [showSearchList, setShowSearchList] = useState(false);
 
@@ -97,8 +100,22 @@ export default function Landing() {
     return items.length ? items.join(" / ") : "Any";
   };
 
+  const [ref, inView] = useInView({
+    triggerOnce: false, // Set to true if you only want the animation to trigger once
+  });
+
+  useEffect(() => {
+    if (inView) {
+      const boxHolderElement = document.querySelector(".box__holder");
+      boxHolderElement?.classList.add("animate__animated", "animate__fadeIn");
+    } else {
+      const boxHolderElement = document.querySelector(".box__holder");
+      boxHolderElement?.classList.remove("animate__animated", "animate__fadeIn");
+    }
+  }, [inView]);
+
   return (
-    <main className="landing">
+    <main className="landing" ref={ref}>
       <video src="/Marakez-2022.mp4" autoPlay loop muted />
 
       <div className="box__holder">

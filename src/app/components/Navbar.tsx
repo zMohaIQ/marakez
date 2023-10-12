@@ -12,12 +12,29 @@ import facebookLogo from "../assests/icons/facebook.svg";
 import instagramLogo from "../assests/icons/instagram.svg";
 import youtubeLogo from "../assests/icons/youtube.svg";
 
+import { useInView } from "react-intersection-observer";
+import React, { useEffect } from "react";
+
 export default function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  const [ref, inView] = useInView({
+    triggerOnce: false, // Set to true if you only want the animation to trigger once
+  });
+
+  useEffect(() => {
+    if (inView) {
+      const listOpenElement = document.querySelector(".open");
+      listOpenElement?.classList.add("animate__animated", "animate__fadeIn");
+    } else {
+      const listOpenElement = document.querySelector(".open");
+      listOpenElement?.classList.remove("animate__animated", "animate__fadeIn");
+    }
+  }, [inView]);
 
   return (
     <main className={`navbar ${isSidebarOpen ? "with-sidebar" : ""}`}>

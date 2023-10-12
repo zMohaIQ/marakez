@@ -24,7 +24,7 @@
 
   .content {
     display: flex;
-    gap: 6rem;
+    gap: 12rem;
 
     @media screen and (max-width: 600px) {
       gap: 2rem;
@@ -49,8 +49,10 @@
   }
 
   .email {
+    width: 33%;
     @media screen and (max-width: 1024px) {
       margin-top: 2rem;
+      width: auto;
     }
     h4 {
       font-size: 0.9rem;

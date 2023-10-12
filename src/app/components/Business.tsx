@@ -9,14 +9,13 @@ import "./DevelopmentSlider.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { useInView } from "react-intersection-observer";
+import React, { useEffect } from "react";
+
 function Arrow(props: { className: any; style: any; onClick: any }) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "transparent" }}
-      onClick={onClick}
-    />
+    <div className={className} style={{ ...style, display: "block", background: "transparent" }} onClick={onClick} />
   );
 }
 
@@ -33,8 +32,23 @@ const Business = () => {
     autoplaySpeed: 2000,
     pauseOnHover: true,
   };
+
+  const [ref, inView] = useInView({
+    triggerOnce: false, // Set to true if you only want the animation to trigger once
+  });
+
+  useEffect(() => {
+    if (inView) {
+      const businessElement = document.querySelector(".business");
+      businessElement?.classList.add("animate__animated", "animate__fadeIn");
+    } else {
+      const businessElement = document.querySelector(".business");
+      businessElement?.classList.remove("animate__animated", "animate__fadeIn");
+    }
+  }, [inView]);
+
   return (
-    <main className="business">
+    <main className="business" ref={ref}>
       <div className="special_header">
         <h1>
           <span className="special">1</span>
@@ -75,9 +89,8 @@ const Business = () => {
         <div className="content">
           <h3>LATEST LAUNCHES</h3>
           <p>
-            Marakez builds with purpose. Every project we create comes to life through meticulous
-            attention to detail for our clients needs. Here are our latest responses to the markets
-            demands.
+            Marakez builds with purpose. Every project we create comes to life through meticulous attention to detail
+            for our clients needs. Here are our latest responses to the markets demands.
           </p>
           <Button>
             View all <br /> Properties
@@ -94,9 +107,9 @@ const Business = () => {
               <p>District 5 Work</p>
               <h3>Campus</h3>
               <p>
-                DISTRICT 5 CAMPUS offers an array of area ranges opens a world of opportunities to
-                choose from, with high-efficiency rates and office spaces that start from 160 sqm up
-                to 690 sqm, ready for delivery within a year and a half.
+                DISTRICT 5 CAMPUS offers an array of area ranges opens a world of opportunities to choose from, with
+                high-efficiency rates and office spaces that start from 160 sqm up to 690 sqm, ready for delivery within
+                a year and a half.
               </p>
             </div>
           </div>
@@ -109,8 +122,8 @@ const Business = () => {
               <p>District 5 Residences</p>
               <h3>Plateau</h3>
               <p>
-                The Plateau is our highest vantage point. The redefinition of elevated living. We
-                sketched it to offer endless views bound to take your breath away.
+                The Plateau is our highest vantage point. The redefinition of elevated living. We sketched it to offer
+                endless views bound to take your breath away.
               </p>
             </div>
           </div>
@@ -126,9 +139,9 @@ const Business = () => {
             <p>District 5 Work</p>
             <h3>Campus</h3>
             <p>
-              DISTRICT 5 CAMPUS offers an array of area ranges opens a world of opportunities to
-              choose from, with high-efficiency rates and office spaces that start from 160 sqm up
-              to 690 sqm, ready for delivery within a year and a half.
+              DISTRICT 5 CAMPUS offers an array of area ranges opens a world of opportunities to choose from, with
+              high-efficiency rates and office spaces that start from 160 sqm up to 690 sqm, ready for delivery within a
+              year and a half.
             </p>
           </div>
         </div>
@@ -141,8 +154,8 @@ const Business = () => {
             <p>District 5 Residences</p>
             <h3>Plateau</h3>
             <p>
-              The Plateau is our highest vantage point. The redefinition of elevated living. We
-              sketched it to offer endless views bound to take your breath away.
+              The Plateau is our highest vantage point. The redefinition of elevated living. We sketched it to offer
+              endless views bound to take your breath away.
             </p>
           </div>
         </div>

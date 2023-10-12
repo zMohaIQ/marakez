@@ -13,11 +13,7 @@ import "animate.css";
 function Arrow(props: { className: any; style: any; onClick: any }) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "transparent" }}
-      onClick={onClick}
-    />
+    <div className={className} style={{ ...style, display: "block", background: "transparent" }} onClick={onClick} />
   );
 }
 
@@ -69,10 +65,10 @@ const DevelopmentSlider: React.FC = () => {
   useEffect(() => {
     if (inView) {
       const developmentElement = document.querySelector(".development");
-      developmentElement?.classList.add("animate__animated", "animate__fadeInUp");
+      developmentElement?.classList.add("animate__animated", "animate__fadeIn");
     } else {
       const developmentElement = document.querySelector(".development");
-      developmentElement?.classList.remove("animate__animated", "animate__fadeInUp");
+      developmentElement?.classList.remove("animate__animated", "animate__fadeIn");
     }
   }, [inView]);
 
@@ -98,7 +94,7 @@ const DevelopmentSlider: React.FC = () => {
           ))}
         </Slider>
       </main>
-      <div className="line" ref={ref}></div>
+      <div className="line"></div>
     </>
   );
 };

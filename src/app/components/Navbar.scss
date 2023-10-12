@@ -65,6 +65,7 @@
     @media screen and (max-width: 768px) {
       display: none;
       &.open {
+        animation: fadeIn 0.5s ease-in-out;
         display: flex;
         font-size: 1.6rem;
         gap: 1rem;
@@ -86,6 +87,7 @@
         li {
           position: relative;
           margin-bottom: 1rem;
+          padding-left: 1rem;
 
           &::after {
             content: "";
@@ -117,7 +119,8 @@
       z-index: 100;
       position: fixed;
       bottom: 0;
-      left: 0;
+      padding-left: 1rem;
+      animation: fadeIn 0.5s ease-in-out;
     }
   }
 
@@ -143,6 +146,7 @@
   .buttons {
     display: flex;
     gap: 1rem;
+    animation: fadeIn 0.5s ease-in-out;
 
     @media screen and (max-width: 768px) {
       display: none;
@@ -162,5 +166,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
